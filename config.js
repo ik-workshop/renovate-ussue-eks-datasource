@@ -4,7 +4,7 @@ module.exports = {
   "platform": "github",
   "token": process.env.RENOVATE_TOKEN,
   "repositories": [
-    "ik-workshop/<CHANGE_ME>"
+    "ik-workshop/renovate-ussue-eks-datasource"
   ],
   "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
   "prConcurrentLimit": 0,
@@ -15,19 +15,30 @@ module.exports = {
   "requireConfig": "optional",
   "baseBranches": ["master", "main"],
   "packageRules": [
-    // {
-    //   "matchDatasources": ["aws-eks-addon"],
-    // }
+    {
+      "matchDatasources": ["aws-eks"],
+      "prBodyColumns": [
+        "Package",
+        "Update",
+        "Change",
+        "Sources",
+        "Changelog"
+      ],
+      "prBodyDefinitions": {
+        "Sources": '[▶️](https://github.com/aws/eks-distro/)',
+        "Changelog": '[▶️](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-{{{newVersion}}}.md)',
+      }
+    }
   ],
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": [".*\\.tf"],
+      "fileMatch": [".*\\.yaml"],
       "matchStrings": [
-        ".*# renovate: eksAddonsFilter=(?<packageName>.*?)\n.*?[a-zA-Z0-9-_:]*[ ]*?[:|=][ ]*?[\"|']?(?<currentValue>[a-zA-Z0-9-_.]+)[\"|']?.*"
+        ".*# renovate: eksFilter=(?<packageName>.*?)\n.*?[a-zA-Z0-9-_:]*[ ]*?[:|=][ ]*?[\"|']?(?<currentValue>[a-zA-Z0-9-_.]+)[\"|']?.*"
       ],
-      // "datasourceTemplate": "aws-eks-addon",
-      // "versioningTemplate": "aws-eks-addon"
+      "datasourceTemplate": "aws-eks",
+      "versioningTemplate": "loose" // aws-eks versioning is not yet supported
     }
   ]
 }
