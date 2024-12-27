@@ -2,12 +2,7 @@
 
 ---
 
-![](https://img.shields.io/github/commit-activity/m/ik-workshop/renovate-issue-blueprint)
-![](https://img.shields.io/github/last-commit/ik-workshop/renovate-issue-blueprint)
-[![](https://img.shields.io/github/license/ivankatliarchuk/.github)](https://github.com/ivankatliarchuk/.github/LICENCE)
-[![](https://img.shields.io/github/languages/code-size/ik-workshop/renovate-issue-blueprint)](https://github.com/ik-workshop/renovate-issue-blueprint)
-[![](https://img.shields.io/github/repo-size/ik-workshop/renovate-issue-blueprint)](https://github.com/ik-workshop/renovate-issue-blueprint)
-![](https://img.shields.io/github/languages/top/ik-workshop/renovate-issue-blueprint?color=green&logo=markdown&logoColor=blue)
+- [Renovate pull request](https://github.com/renovatebot/renovate/pull/33305)
 
 ---
 
