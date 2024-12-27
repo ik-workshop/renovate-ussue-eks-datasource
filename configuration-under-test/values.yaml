@@ -6,4 +6,4 @@ clusters:
   - name: tier-1
     # region and where or not only default versions
     # renovate: eksFilter={"default":"false", "region":"eu-west-1"}
-    version: 1.28
+    version: 1.31
